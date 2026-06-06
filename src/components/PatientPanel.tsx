@@ -224,8 +224,11 @@ export default function PatientPanel({
     if (patient.progressEntries.length === 0) {
       report += '記録なし\n';
     } else {
-      patient.progressEntries.forEach(entry => {
-        report += `${entry.time} : ${entry.text}\n`;
+      patient.progressEntries.forEach((entry, index) => {
+        report += `${entry.time} : \n${entry.text}\n`;
+        if (index < patient.progressEntries.length - 1) {
+          report += `\n`;
+        }
       });
     }
     return report;
@@ -465,7 +468,7 @@ export default function PatientPanel({
                       記録がありません
                     </div>
                   ) : (
-                    patient.progressEntries.map((entry) => (
+                    [...patient.progressEntries].reverse().map((entry) => (
                       <div key={entry.id} className="group flex gap-2 items-start p-2 rounded border border-slate-200 bg-white shadow-sm transition hover:border-blue-300">
                         <input
                           type="text"
