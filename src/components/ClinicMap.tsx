@@ -25,13 +25,13 @@ export default function ClinicMap({ patients, onLocationClick, activeLocationId,
     
     if (styleProfile === 'dash') {
       outerClasses = `border-2 border-dashed ${isActive ? 'border-blue-400 bg-blue-50/20' : 'border-slate-200 bg-slate-50'} rounded-lg p-2 flex flex-col transition-colors min-h-0`;
-      labelClasses = `text-[10px] font-bold ${isActive ? 'text-blue-500' : 'text-slate-500'} uppercase shrink-0`;
+      labelClasses = `text-lg font-bold ${isActive ? 'text-blue-500' : 'text-slate-500'} uppercase shrink-0`;
     } else if (styleProfile === 'blue') {
       outerClasses = `border-2 ${isActive ? 'border-blue-600 ring-2 ring-blue-200' : 'border-blue-600'} rounded-lg p-2 bg-blue-50/50 flex flex-col transition-all min-h-0`;
-      labelClasses = `text-[10px] font-bold text-blue-600 uppercase shrink-0`;
+      labelClasses = `text-lg font-bold text-blue-600 uppercase shrink-0`;
     } else if (styleProfile === 'dark') {
       outerClasses = `border-2 ${isActive ? 'border-slate-800 ring-2 ring-slate-300' : 'border-slate-800'} rounded-lg p-2 bg-slate-100 flex flex-col transition-all min-h-0`;
-      labelClasses = `text-[10px] font-bold text-slate-800 uppercase shrink-0`;
+      labelClasses = `text-lg font-bold text-slate-800 uppercase shrink-0`;
     }
 
     let patientCardClasses = '';
@@ -89,11 +89,11 @@ export default function ClinicMap({ patients, onLocationClick, activeLocationId,
           {/* Row 3: Entrance & Waiting */}
           <div className="border-2 border-slate-400 border-double rounded-lg p-2 bg-white flex flex-col items-center justify-center min-h-0">
             <svg className="text-slate-300 mb-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19V15H11V19H13M19 19V9L12 3L5 9V19H19Z"/></svg>
-            <span className="text-[10px] font-bold text-slate-600 uppercase">玄関</span>
+            <span className="text-lg font-bold text-slate-600 uppercase">玄関</span>
           </div>
 
           <div className="border-2 border-dashed border-slate-200 rounded-lg p-2 bg-slate-50 flex flex-col cursor-pointer transition-colors hover:bg-slate-100/50 min-h-0" onClick={() => onLocationClick('wait-1')}>
-            <span className="text-[10px] font-bold text-slate-500 uppercase mb-1 shrink-0">待合室 (3枠)</span>
+            <span className="text-lg font-bold text-slate-500 uppercase mb-1 shrink-0">待合室 (3枠)</span>
             <div className="flex-1 flex flex-col justify-center gap-1.5 min-h-0">
               {[1, 2, 3].map(i => {
                 const wId = `wait-${i}` as LocationId;
