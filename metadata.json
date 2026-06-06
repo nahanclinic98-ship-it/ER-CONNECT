@@ -1,0 +1,8 @@
+{
+  "name": "ER Connect",
+  "description": "Emergency Clinic Patient Management and interactive map application",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
